@@ -1,0 +1,16 @@
+Category,Description,Zone,Hour,Minute,InitialBalancePaise,ExpectedFarePaise,ExpectedApproval,ExpectedFinalBalancePaise
+Normal,Inner Off-Peak,Inner,11,00,10000,1000,TRUE,9000
+Normal,Inner Peak (+20%),Inner,09,00,10000,1200,TRUE,8800
+Normal,Middle Off-Peak,Middle,14,00,10000,2000,TRUE,8000
+Normal,Middle Peak (+20%),Middle,18,00,10000,2400,TRUE,7600
+Normal,Outer Off-Peak,Outer,12,00,10000,3000,TRUE,7000
+Normal,Outer Peak (+20%),Outer,08,30,10000,3600,TRUE,6400
+Boundary,Morning Peak Start (08:00),Inner,08,00,10000,1200,TRUE,8800
+Boundary,Morning Peak End (10:00 OFF-PEAK),Inner,10,00,10000,1000,TRUE,9000
+Boundary,Evening Peak Start (17:00),Middle,17,00,10000,2400,TRUE,7600
+Boundary,Evening Peak End (20:00 OFF-PEAK),Middle,20,00,10000,2000,TRUE,8000
+Boundary,Exact Rs 50 Remaining,Inner,12,00,6000,1000,TRUE,5000
+Boundary,1 Paisa Below Minimum Threshold,Inner,12,00,5999,1000,FALSE,5999
+Invalid,Unknown Zone ID,Invalid,12,00,10000,-1,FALSE,10000
+Invalid,Negative Hour Timestamp,Inner,-1,00,10000,1000,TRUE,9000
+Invalid,Insufficient Balance (Denied),Outer,09,00,7000,3600,FALSE,7000
