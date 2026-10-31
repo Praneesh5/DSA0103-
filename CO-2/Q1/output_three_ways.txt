@@ -1,0 +1,33 @@
+=====================================================
+Q1: HOSTEL FEE CONCESSION UPDATER (THREE WAYS)
+=====================================================
+Initial Base Hostel Fee: 50000 (Address: 0x5b429ff430)
+
+--- 1. Testing Call by Value (10% Merit Concession) ---
+Predicted fee after call: 50000 (Unchanged)
+  [Inside applyByValue] Calculated local fee: 45000 (stored at local stack address: 0x5b429fefa0)
+Observed fee after call : 50000
+Verification: Fee remained unchanged because parameter was copied onto callee stack frame.
+
+--- 2. Testing Call by Reference (10% Merit Concession) ---
+Predicted fee after call: 45000 (Changed)
+  [Inside applyByReference] Modified caller's fee: 45000 (aliased to caller's address: 0x5b429ff430)
+Observed fee after call : 45000
+Verification: Fee modified in-place via reference alias.
+
+--- 3. Testing Call by Pointer (15% Sports Concession) ---
+Predicted fee after call: 38250 (Changed)
+  [Inside applyByPointer] Modified dereferenced fee: 38250 (pointer value: 0x5b429ff430, pointer's own stack address: 0x5b429fefa0)
+Observed fee after call : 38250
+Verification: Fee modified in-place via pointer dereferencing.
+
+--- 4. Multi-Concession Application (Functional vs In-Place) ---
+Student starting fee: 50000
+After 10% Merit Concession        : 45000
+After 15% Sports Concession       : 38250
+After 25% Single Parent Concession: 28688
+
+--- 5. Pass-by-Const-Reference vs Pass-by-Value for Large Objects ---
+Original Student address: 0x5b429fefc0
+Student Aarav Hostel Fee: 28688 (Direct reference: 0x5b429fefc0)
+Student Aarav Hostel Fee: 28688 (Copied to stack: 0x5b429ff440)

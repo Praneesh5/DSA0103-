@@ -1,0 +1,47 @@
+=====================================================
+Q6: TRAIN JOURNEY PLANNER - CORRECTNESS TEST SUITE
+=====================================================
+
+Test 1: Standard departure & arrival (9:45 to 13:10)
+  Input Times: [09:45] and [13:10]
+  Diff: 205 (Expected: 205) -> PASS
+  Earlier: true (Expected: true) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 2: Reverse order check (13:10 and 9:45)
+  Input Times: [13:10] and [09:45]
+  Diff: 205 (Expected: 205) -> PASS
+  Earlier: false (Expected: false) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 3: Same time twice (10:30 and 10:30)
+  Input Times: [10:30] and [10:30]
+  Diff: 0 (Expected: 0) -> PASS
+  Earlier: false (Expected: false) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 4: Times on either side of noon (11:45 and 12:15)
+  Input Times: [11:45] and [12:15]
+  Diff: 30 (Expected: 30) -> PASS
+  Earlier: true (Expected: true) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 5: Midnight (00:00) to late night (23:59)
+  Input Times: [00:00] and [23:59]
+  Diff: 1439 (Expected: 1439) -> PASS
+  Earlier: true (Expected: true) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 6: Exact noon to 1 minute past noon
+  Input Times: [12:00] and [12:01]
+  Diff: 1 (Expected: 1) -> PASS
+  Earlier: true (Expected: true) -> PASS
+  Result: ALL CHECKS PASSED
+
+Test 7: Same hour, earlier minute
+  Input Times: [14:50] and [14:20]
+  Diff: 30 (Expected: 30) -> PASS
+  Earlier: false (Expected: false) -> PASS
+  Result: ALL CHECKS PASSED
+
+Overall Correctness Status: 100% VERIFIED SUCCESS

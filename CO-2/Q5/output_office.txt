@@ -1,0 +1,34 @@
+=====================================================
+Q5: STATIC PERSISTENCE & MULTI-BUS ARCHITECTURE
+=====================================================
+
+--- 1. Testing Static Persistence: Calling Function Twice ---
+First Call to bookMorningShift():
+  [Entering bookMorningShift()]
+  Ravi: Seat 1
+  Sneha: Seat 2
+  Total issued so far: 2
+  [Exiting bookMorningShift() - local objects destroyed]
+
+Second Call to bookMorningShift():
+  [Entering bookMorningShift()]
+  Ravi: Seat 3
+  Sneha: Waiting List
+  Total issued so far: 3
+  [Exiting bookMorningShift() - local objects destroyed]
+
+Analysis of Static Behavior:
+Even though local objects t1 and t2 went out of scope, the static variable
+'issued' remained in static storage, causing the second invocation to hit
+capacity and place new passengers on the Waiting List!
+
+--- 2. Multi-Bus Simulation via TicketOffice/BusRoute Objects ---
+Demonstrating two independent buses operating simultaneously:
+  [Route 101 - North Campus] Karan: Seat 1
+  [Route 101 - North Campus] Diya: Seat 2
+  [Route 202 - South Campus] Vikram: Seat 1
+  [Route 202 - South Campus] Pooja: Seat 2
+  [Route 202 - South Campus] Sanjay: Waiting List
+
+Route 101 Issued: 2 / 3
+Route 202 Issued: 2 / 2

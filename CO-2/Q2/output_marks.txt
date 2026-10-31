@@ -1,0 +1,26 @@
+=====================================================
+Q2: EXAMINATION MARKS REGISTER - RETURN BY REFERENCE
+=====================================================
+Initial Marks Register             : [ 78, 85, 92, 64, 89 ]
+
+--- 1. Moderation (+2 marks) via Return by Reference ---
+Highest mark before moderation: 92
+After +2 Moderation                : [ 78, 85, 94, 64, 89 ]
+
+--- 2. Direct Assignment via Left-hand-side Reference ---
+After findHighest(...) = 99        : [ 78, 85, 99, 64, 89 ]
+
+--- 3. Return by Const Reference (Safety Guarantee) ---
+Read-only top mark: 99
+Compile-time protection: findHighestConst(marks, n) cannot appear on LHS of =
+
+--- 4. Return by Copy (Rvalue behavior) ---
+Copied top mark: 99 (Independent copy in stack memory)
+
+--- 5. Alternative Concept A: Return by Index ---
+Found highest at index: 2 (Value: 99)
+After index-based reduction (-5)   : [ 78, 85, 94, 64, 89 ]
+
+--- 6. Alternative Concept B: Return by Pointer ---
+Found highest at address: 0xe7ebbff9f8 (Value: 94)
+After pointer-based increment (+1) : [ 78, 85, 95, 64, 89 ]

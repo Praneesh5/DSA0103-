@@ -1,0 +1,31 @@
+=====================================================
+Q4: SAVINGS ACCOUNT MINI-STATEMENT (ARRAY IN CLASS)
+=====================================================
+Created Account 192571006001 with Opening Balance: $5000
+
+--- Executing 14 Transactions to Observe 11th+ Shift Behavior ---
+
+[Status after 10 transactions]: Buffer is now at maximum capacity (10).
+Next 4 transactions will trigger array shifting, discarding oldest records:
+
+=====================================================
+             SAVINGS ACCOUNT MINI-STATEMENT          
+=====================================================
+ Account Number: 192571006001
+ Current Balance: $10450.00
+ Total Transactions Executed: 14
+ Showing Last 10 Transactions:
+-----------------------------------------------------
+  No. | Type       | Amount       
+-----------------------------------------------------
+    1 | DEPOSIT    | $   2000.00
+    2 | WITHDRAWAL | $    500.00
+    3 | DEPOSIT    | $    800.00
+    4 | WITHDRAWAL | $    250.00
+    5 | DEPOSIT    | $   1100.00
+    6 | WITHDRAWAL | $    400.00
+    7 | DEPOSIT    | $    950.00
+    8 | WITHDRAWAL | $    600.00
+    9 | DEPOSIT    | $   1500.00
+   10 | WITHDRAWAL | $    350.00
+=====================================================

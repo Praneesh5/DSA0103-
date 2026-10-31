@@ -1,0 +1,14 @@
+=====================================================
+Q4: PERFORMANCE BENCHMARK (SHIFTING vs CIRCULAR vs DEQUE)
+Operations Executed: 100000 transactions
+=====================================================
+
+--- Testing with Capacity K = 10 ---
+  1. Shifting Array (K=10)   :      531 microseconds (O(K))
+  2. Circular Buffer (K=10)   :      695 microseconds (O(1))
+  3. std::deque (K=10)        :      727 microseconds (O(1) amortized)
+
+--- Testing with Capacity K = 50 (Expanded Requirement) ---
+  1. Shifting Array (K=50)   :     3440 microseconds (5x slower due to O(K))
+  2. Circular Buffer (K=50)   :      750 microseconds (O(1) invariant!)
+  3. std::deque (K=50)        :      666 microseconds

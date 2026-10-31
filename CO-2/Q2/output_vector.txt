@@ -1,0 +1,29 @@
+=====================================================
+Q2: VECTOR REALLOCATION & REFERENCE INVALIDATION
+=====================================================
+Initial Vector Details:
+  Size    : 3
+  Capacity: 3
+  Address of underlying data: 0x25c53062500
+
+Obtained reference to highest mark:
+  markRef value   : 88
+  markRef address : 0x25c53062508
+  markPtr value   : 88
+
+--- Adding elements to force vector reallocation beyond capacity ---
+After Adding 20 Elements:
+  New Size    : 23
+  New Capacity: 24
+  New Address of data buffer: 0x25c53062580
+
+--- Safety Comparison: Reference vs Index ---
+1. Evaluating Index-based access:
+   marksRegister[highestIndex] is completely safe!
+   Value at index 2: 88 (Current address: 0x25c53062588)
+
+2. Evaluating Reference and Pointer access:
+   The pre-existing markRef address is: 0x25c53062508
+   The pre-existing markPtr points to : 0x25c53062508
+   CRITICAL DANGER: The memory at 0x25c53062508 was DEALLOCATED when the vector grew!
+   Any read or write through markRef / markPtr is now a DANGLING REFERENCE / HEAP USE AFTER FREE!

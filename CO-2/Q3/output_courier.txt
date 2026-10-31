@@ -1,0 +1,29 @@
+=====================================================
+Q3: COURIER CHARGE CALCULATOR (REDESIGNED)
+=====================================================
+
+Testing 6 Calls - Predictions vs Actual Selections:
+
+1. Call: charge(500)
+   Predicted Selection : charge(int, bool, bool) -> Exact int match, defaults applied
+   Actual Execution    : [Invoked: charge(int=500g, express=false, insured=false)] -> Cost: 25
+
+2. Call: charge(2)
+   Predicted Selection : charge(int, bool, bool) -> Exact int match (2g), defaults applied
+   Actual Execution    : [Invoked: charge(int=2g, express=false, insured=false)] -> Cost: 0.1
+
+3. Call: charge(2.0f)
+   Predicted Selection : charge(double, bool, bool) -> float promotes/converts to double
+   Actual Execution    : [Invoked: charge(double=2kg, express=false, insured=false)] -> Cost: 100
+
+4. Call: charge(2.5, true)
+   Predicted Selection : charge(double, bool, bool) -> double match, express=true, default insured=false
+   Actual Execution    : [Invoked: charge(double=2.5kg, express=true, insured=false)] -> Cost: 225
+
+5. Call: charge(1500, false, true)
+   Predicted Selection : charge(int, bool, bool) -> int match, all 3 arguments explicitly given
+   Actual Execution    : [Invoked: charge(int=1500g, express=false, insured=true)] -> Cost: 125
+
+6. Call: charge(Parcel(4.0, true, true, "International"))
+   Predicted Selection : charge(const Parcel&) -> Exact user-defined type match
+   Actual Execution    : [Invoked: charge(const Parcel& [weight=4kg, dest=International])] -> Cost: 600

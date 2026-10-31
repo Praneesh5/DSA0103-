@@ -1,0 +1,5 @@
+=== COMPILATION AT -O0 (NO OPTIMIZATIONS) ===
+===================================================== Q6: INLINE vs NOINLINE BENCHMARK (10000000 Calls) =====================================================  1. Friend Function (WITH inline)    :     29 ms 2. Friend Function (WITHOUT inline) :     30 ms 3. Member Function (minutesTo)       :     30 ms 4. Public Getters Approach           :     52 ms
+
+=== COMPILATION AT -O2 (LEVEL 2 OPTIMIZATIONS) ===
+===================================================== Q6: INLINE vs NOINLINE BENCHMARK (10000000 Calls) =====================================================  1. Friend Function (WITH inline)    :      0 ms 2. Friend Function (WITHOUT inline) :      0 ms 3. Member Function (minutesTo)       :      0 ms 4. Public Getters Approach           :      0 ms
